@@ -3,6 +3,12 @@ import { maxTripletSum } from './Array-functions/sumOfThreeMaxValues'
 import { biggest } from './Array-functions/sortTomaxValue'
 import { pattern } from './Array-functions/shiftCombinations'
 import { arithmeticSequenceSum } from './Array-functions/arithmeticSequence'
+import { flattenAndSort } from './Algorithms-and-functional-programming/flattenAndSortingAnArray'
+import { add } from './Algorithms-and-functional-programming/functionalAddition'
+import { multiplyAll } from './Algorithms-and-functional-programming/multiplicationOfAllArrayElements'
+import { uniqueSum } from './Algorithms-and-functional-programming/sumOfUniqueValues'
+import { reduce } from './Algorithms-and-functional-programming/resuce'
+import { compose } from './Algorithms-and-functional-programming/functionalComposition'
 
 const testArrayTask1: number[][] = [
 	[1, 2, 3],
@@ -20,3 +26,37 @@ biggest(testArrayTask3)
 pattern(3)
 
 arithmeticSequenceSum(2, 3, 5)
+
+flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]])
+
+const addOne = add(1)
+console.log('function add(1+3) result: ', addOne(3))
+
+const addThree = add(3)
+console.log('function add(3+3) result: ', addThree(3))
+
+console.log('multiplyAll result: ', multiplyAll([1, 2, 3])(2))
+
+console.log('uniqueSum', uniqueSum([-1, -1, 5, 2, -7]))
+
+console.log(
+	'reduce result: ',
+	reduce([1, 2, 3, 4], (acc: number, value: number) => (acc *= value), 1)
+)
+
+const f = (x: any) => {
+	console.log(`f returned ${x}`)
+	return x
+}
+const g = (x: any) => {
+	console.log(`g returned ${x}`)
+	return x
+}
+const h = (x: any) => {
+	console.log(`h returned ${x}`)
+	return x
+}
+
+//does not work
+// const composeFunction = compose(f, g, h)
+// composeFunction(1)
