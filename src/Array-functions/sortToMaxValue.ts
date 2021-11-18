@@ -1,13 +1,9 @@
-
-const sortFunction = (a: string, b: string): number => {
-	if (a.includes('0') && !b.includes('0')) return -1
-	else if (!a.includes('0') && b.includes('0')) return 1
-	else return Number(a > b)
+const sortFunction = (a: number, b: number): number => {
+	return parseInt(a.toString() + b.toString()) > parseInt(b.toString() + a.toString()) ? -1 : 1
 }
 
-//Has bugs
-export const biggest = (numbersArray: number[]): void => {
-	const stringArray: string[] = numbersArray.map((item) => item.toString())
-	const resultString: string = stringArray.sort((a, b) => -1 * sortFunction(a, b)).join('')
-	console.log('biggest result: ', resultString)
+export const biggest = (numbersArray: number[]) => {
+	const sortedNumbersArray = numbersArray.sort((a, b) => sortFunction(a, b))
+
+	console.log('biggest result: ', sortedNumbersArray.join(''))
 }

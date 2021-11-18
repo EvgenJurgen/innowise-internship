@@ -14,7 +14,7 @@ sumAverage(testArrayTask1)
 const testArrayTask2: number[] = [1, 2, 3, 5, 1, 9, 6, 9]
 maxTripletSum(testArrayTask2)
 
-const testArrayTask3: number[] = [300, 30, 34, 5, 9]
+const testArrayTask3: number[] = [3, 30, 34, 5, 9]
 biggest(testArrayTask3)
 
 pattern(3)
