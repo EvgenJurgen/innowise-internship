@@ -9,6 +9,8 @@ import { multiplyAll } from './Algorithms-and-functional-programming/multiplicat
 import { uniqueSum } from './Algorithms-and-functional-programming/sumOfUniqueValues'
 import { reduce } from './Algorithms-and-functional-programming/resuce'
 import { compose } from './Algorithms-and-functional-programming/functionalComposition'
+import { spread } from './Higher-order-functions/unpackingArguments'
+import { ZipWith } from './Higher-order-functions/ZipWith'
 
 const testArrayTask1: number[][] = [
 	[1, 2, 3],
@@ -57,6 +59,13 @@ const h = (x: unknown) => {
 	return x
 }
 
-//does not work
 const composeFunction = compose(f, g, h)
 composeFunction(1)
+
+const fn = (a: number, b: number) => {
+	console.log('array a+b', a + b)
+}
+
+spread(fn, [1, 2])
+
+ZipWith(Math.pow, [10, 10, 10, 10], [0, 1, 2, 3])
