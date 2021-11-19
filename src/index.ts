@@ -44,19 +44,19 @@ console.log(
 	reduce([1, 2, 3, 4], (acc: number, value: number) => (acc *= value), 1)
 )
 
-const f = (x: any) => {
+const f = (x: unknown) => {
 	console.log(`f returned ${x}`)
 	return x
 }
-const g = (x: any) => {
+const g = (x: unknown) => {
 	console.log(`g returned ${x}`)
 	return x
 }
-const h = (x: any) => {
+const h = (x: unknown) => {
 	console.log(`h returned ${x}`)
 	return x
 }
 
 //does not work
-// const composeFunction = compose(f, g, h)
-// composeFunction(1)
+const composeFunction = compose(f, g, h)
+composeFunction(1)
