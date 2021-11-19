@@ -15,6 +15,7 @@ import { sequenceSum } from './Recursion/sumOfSequence'
 import { stringify } from './Recursion/linkedListInRow'
 import { Singleton } from './Classes-and-patterns/Singleton'
 import './Classes-and-patterns/StringExtension'
+import { sort } from './Sorting/sortedListOfObjects'
 
 const testArrayTask1: number[][] = [
 	[1, 2, 3],
@@ -63,6 +64,7 @@ const h = (x: unknown) => {
 	return x
 }
 
+console.log('compose result: ')
 const composeFunction = compose(f, g, h)
 composeFunction(1)
 
@@ -85,13 +87,37 @@ class Node {
 	}
 }
 
-console.log(stringify(new Node(0, new Node(1, new Node(4, new Node(9, new Node(16)))))))
+console.log(
+	'stringify result: ',
+	stringify(new Node(0, new Node(1, new Node(4, new Node(9, new Node(16))))))
+)
 
 const singleton1 = new Singleton()
 const singleton2 = new Singleton()
 
+console.log('Singleton Class')
 console.log('singleto1 === singleto2', singleton1 === singleton2)
 console.log('singleton1.name', singleton1.name)
 console.log('singleton2.name', singleton2.name)
 
-console.log('test string'.customUpperCase())
+console.log('customUpperCase() result: ', 'test string'.customUpperCase())
+
+sort(
+	[
+		{ a: 1, b: 3 },
+		{ a: 3, b: 2 },
+		{ a: 2, b: 40 },
+		{ a: 4, b: 12 },
+	],
+	'a'
+)
+
+sort(
+	[
+		{ a: 1, b: 3 },
+		{ a: 3, b: 2 },
+		{ a: 2, b: 40 },
+		{ a: 4, b: 12 },
+	],
+	'b'
+)
