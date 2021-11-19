@@ -11,6 +11,8 @@ import { reduce } from './Algorithms-and-functional-programming/resuce'
 import { compose } from './Algorithms-and-functional-programming/functionalComposition'
 import { spread } from './Higher-order-functions/unpackingArguments'
 import { ZipWith } from './Higher-order-functions/ZipWith'
+import { sequenceSum } from './Recursion/sumOfSequence'
+import { stringify } from './Recursion/linkedListInRow'
 
 const testArrayTask1: number[][] = [
 	[1, 2, 3],
@@ -69,3 +71,16 @@ const fn = (a: number, b: number) => {
 spread(fn, [1, 2])
 
 ZipWith(Math.pow, [10, 10, 10, 10], [0, 1, 2, 3])
+
+console.log('sequenceSum result: ', sequenceSum(0, 10, 1))
+
+class Node {
+	data
+	next
+	constructor(data: unknown, next: unknown = null) {
+		this.data = data
+		this.next = next
+	}
+}
+
+console.log(stringify(new Node(0, new Node(1, new Node(4, new Node(9, new Node(16)))))))
