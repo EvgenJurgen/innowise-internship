@@ -13,6 +13,8 @@ import { spread } from './Higher-order-functions/unpackingArguments'
 import { ZipWith } from './Higher-order-functions/ZipWith'
 import { sequenceSum } from './Recursion/sumOfSequence'
 import { stringify } from './Recursion/linkedListInRow'
+import { Singleton } from './Classes-and-patterns/Singleton'
+import './Classes-and-patterns/StringExtension'
 
 const testArrayTask1: number[][] = [
 	[1, 2, 3],
@@ -84,3 +86,12 @@ class Node {
 }
 
 console.log(stringify(new Node(0, new Node(1, new Node(4, new Node(9, new Node(16)))))))
+
+const singleton1 = new Singleton()
+const singleton2 = new Singleton()
+
+console.log('singleto1 === singleto2', singleton1 === singleton2)
+console.log('singleton1.name', singleton1.name)
+console.log('singleton2.name', singleton2.name)
+
+console.log('test string'.customUpperCase())
