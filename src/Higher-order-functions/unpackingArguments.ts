@@ -1,3 +1,3 @@
-export const spread = (callback: any, arr: unknown[]) => {
-	return callback(...arr)
+export const spread = (callback: any, arr: unknown[]): any => {
+	callback(...arr)
 }

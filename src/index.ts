@@ -102,9 +102,10 @@ const fn = (a: number, b: number) => {
 	console.log('array a+b', a + b)
 }
 
+console.log('spread() result: ')
 spread(fn, [1, 2])
 
-ZipWith(Math.pow, [10, 10, 10, 10], [0, 1, 2, 3])
+console.log('ZipWith() result: ', ZipWith(Math.pow, [10, 10, 10, 10], [0, 1, 2, 3]))
 
 console.log('\n//////////Recursion//////////\n')
 
