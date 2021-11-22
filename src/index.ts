@@ -50,13 +50,16 @@ console.log('arithmeticSequenceSum() result: ', arithmeticSequenceSum(2, 3, 5))
 
 console.log('\n//////////String-functions//////////\n')
 
-toMachineName('Lorem        ipsum sit                                 DOLOR', '-')
+console.log(
+	'toMachineName() result: ',
+	toMachineName('Lorem        ipsum sit                                 DOLOR', '-')
+)
 
-alphabetized('The Holy      Bible.')
+console.log('alphabetized() result: ', alphabetized('The Holy      Bible.'))
 
-romanToNumber('XVII')
+console.log('romanToNumber() result: ', romanToNumber('XVII'))
 
-countDuplicates('aabBcde')
+console.log('countDuplicates() result: ', countDuplicates('aabBcde'))
 
 console.log('\n//////////Algorithms-and-functional-programming//////////\n')
 

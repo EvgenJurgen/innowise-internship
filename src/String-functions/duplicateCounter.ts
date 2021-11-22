@@ -1,12 +1,12 @@
-export const countDuplicates = (text: string) => {
+export const countDuplicates = (text: string): number => {
 	text = text.toLowerCase().split('').sort().join('')
 
 	let i = 0
-	let char = text.charAt(i)
+	let char: string = text.charAt(i)
 	let count = 0
 
 	while (i < text.length) {
-		const lastIndex = text.lastIndexOf(char)
+		const lastIndex: number = text.lastIndexOf(char)
 		if (i < lastIndex) {
 			count = count + 1
 		}
@@ -14,5 +14,5 @@ export const countDuplicates = (text: string) => {
 		char = text.charAt(i)
 	}
 
-	console.log('countDuplicates() result: ', count)
+	return count
 }
