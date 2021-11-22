@@ -139,22 +139,28 @@ console.log('customUpperCase() result: ', 'test string'.customUpperCase())
 
 console.log('\n//////////Sorting//////////\n')
 
-sort(
-	[
-		{ a: 1, b: 3 },
-		{ a: 3, b: 2 },
-		{ a: 2, b: 40 },
-		{ a: 4, b: 12 },
-	],
-	'a'
+console.log(
+	'sort() by a',
+	sort(
+		[
+			{ a: 1, b: 3 },
+			{ a: 3, b: 2 },
+			{ a: 2, b: 40 },
+			{ a: 4, b: 12 },
+		],
+		'a'
+	)
 )
 
-sort(
-	[
-		{ a: 1, b: 3 },
-		{ a: 3, b: 2 },
-		{ a: 2, b: 40 },
-		{ a: 4, b: 12 },
-	],
-	'b'
+console.log(
+	'sort() by b',
+	sort(
+		[
+			{ a: 1, b: 3 },
+			{ a: 3, b: 2 },
+			{ a: 2, b: 40 },
+			{ a: 4, b: 12 },
+		],
+		'b'
+	)
 )
