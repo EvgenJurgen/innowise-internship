@@ -14,4 +14,8 @@ export const maxTripletSum = (arr: number[]): void => {
 	}
 
 	console.log('maxTripletSum result: ', threeMaxNumbers)
+	console.log(
+		'maxTripletSum sum: ',
+		threeMaxNumbers.reduce((sum, item) => sum + item)
+	)
 }

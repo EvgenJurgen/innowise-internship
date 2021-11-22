@@ -3,19 +3,31 @@ import { maxTripletSum } from './Array-functions/sumOfThreeMaxValues'
 import { biggest } from './Array-functions/sortTomaxValue'
 import { pattern } from './Array-functions/shiftCombinations'
 import { arithmeticSequenceSum } from './Array-functions/arithmeticSequence'
+
+import { toMachineName } from './String-functions/machineReadableNames'
+import { alphabetized } from './String-functions/alphabetization'
+import { romanToNumber } from './String-functions/decodingRomanNumerals'
+import { countDuplicates } from './String-functions/duplicateCounter'
+
 import { flattenAndSort } from './Algorithms-and-functional-programming/flattenAndSortingAnArray'
 import { add } from './Algorithms-and-functional-programming/functionalAddition'
 import { multiplyAll } from './Algorithms-and-functional-programming/multiplicationOfAllArrayElements'
 import { uniqueSum } from './Algorithms-and-functional-programming/sumOfUniqueValues'
 import { reduce } from './Algorithms-and-functional-programming/resuce'
 import { compose } from './Algorithms-and-functional-programming/functionalComposition'
+
 import { spread } from './Higher-order-functions/unpackingArguments'
 import { ZipWith } from './Higher-order-functions/ZipWith'
+
 import { sequenceSum } from './Recursion/sumOfSequence'
 import { stringify } from './Recursion/linkedListInRow'
+
 import { Singleton } from './Classes-and-patterns/Singleton'
 import './Classes-and-patterns/StringExtension'
+
 import { sort } from './Sorting/sortedListOfObjects'
+
+console.log('\n//////////Array-functions//////////\n')
 
 const testArrayTask1: number[][] = [
 	[1, 2, 3],
@@ -33,6 +45,18 @@ biggest(testArrayTask3)
 pattern(3)
 
 arithmeticSequenceSum(2, 3, 5)
+
+console.log('\n//////////String-functions//////////\n')
+
+toMachineName('Lorem        ipsum sit                                 DOLOR', '-')
+
+alphabetized('The Holy      Bible.')
+
+romanToNumber('XVII')
+
+countDuplicates('aabBcde')
+
+console.log('\n//////////Algorithms-and-functional-programming//////////\n')
 
 flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]])
 
@@ -72,9 +96,13 @@ const fn = (a: number, b: number) => {
 	console.log('array a+b', a + b)
 }
 
+console.log('\n//////////Higher-order-functions//////////\n')
+
 spread(fn, [1, 2])
 
 ZipWith(Math.pow, [10, 10, 10, 10], [0, 1, 2, 3])
+
+console.log('\n//////////Recursion//////////\n')
 
 console.log('sequenceSum result: ', sequenceSum(0, 10, 1))
 
@@ -92,6 +120,8 @@ console.log(
 	stringify(new Node(0, new Node(1, new Node(4, new Node(9, new Node(16))))))
 )
 
+console.log('\n//////////Classes-and-patterns//////////\n')
+
 const singleton1 = new Singleton()
 const singleton2 = new Singleton()
 
@@ -101,6 +131,8 @@ console.log('singleton1.name', singleton1.name)
 console.log('singleton2.name', singleton2.name)
 
 console.log('customUpperCase() result: ', 'test string'.customUpperCase())
+
+console.log('\n//////////Sorting//////////\n')
 
 sort(
 	[
