@@ -1,11 +1,11 @@
-export const sumAverage = (array: number[][]): void => {
+export const sumAverage = (array: number[][]): number => {
 	const arithmeticMeanArray: number[] = array.map(
-		(arr) => arr.reduce((sum, item) => (sum += item)) / arr.length
+		(arr) => arr.reduce((sum, item) => sum + item) / arr.length
 	)
 
-	const sumArithmeticMeans: number = arithmeticMeanArray.reduce((sum, item) => (sum += item))
+	const sumArithmeticMeans: number = arithmeticMeanArray.reduce((sum, item) => sum + item)
 
 	const averagedSum: number = Math.floor(sumArithmeticMeans)
 
-	console.log('sumAverage result: ', averagedSum)
+	return averagedSum
 }

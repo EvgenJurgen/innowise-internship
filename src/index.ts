@@ -34,17 +34,19 @@ const testArrayTask1: number[][] = [
 	[4, 5, 6],
 	[7, 8, 9],
 ]
-sumAverage(testArrayTask1)
+console.log('sumAverage() result: ', sumAverage(testArrayTask1))
 
 const testArrayTask2: number[] = [1, 2, 3, 5, 1, 9, 6, 9]
-maxTripletSum(testArrayTask2)
+const { threeMaxNumbers, sumOfThreeMaxNumbers } = maxTripletSum(testArrayTask2)
+console.log('threeMaxNumbers of maxTripletSum(): ', threeMaxNumbers)
+console.log('sumOfThreeMaxNumbers of maxTripletSum(): ', sumOfThreeMaxNumbers)
 
 const testArrayTask3: number[] = [3, 30, 34, 5, 9]
-biggest(testArrayTask3)
+console.log('biggest() result: ', biggest(testArrayTask3))
 
-pattern(3)
+console.log('pattern() result: ', pattern(3))
 
-arithmeticSequenceSum(2, 3, 5)
+console.log('arithmeticSequenceSum() result: ', arithmeticSequenceSum(2, 3, 5))
 
 console.log('\n//////////String-functions//////////\n')
 

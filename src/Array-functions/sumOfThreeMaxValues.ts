@@ -1,21 +1,15 @@
-export const maxTripletSum = (arr: number[]): void => {
-	arr.sort((a, b) => b - a)
+const onlyUnique = (value: number, index: number, array: number[]): boolean => {
+	return array.indexOf(value) === index
+}
 
-	const threeMaxNumbers: number[] = []
+export const maxTripletSum = (
+	arr: number[]
+): { threeMaxNumbers: number[]; sumOfThreeMaxNumbers: number } => {
+	const threeMaxNumbers: number[] = arr
+		.sort((a, b) => b - a)
+		.filter((value, index, array) => onlyUnique(value, index, array))
+		.slice(0, 3)
+	const sumOfThreeMaxNumbers: number = threeMaxNumbers.reduce((sum, item) => sum + item)
 
-	for (const item of arr) {
-		while (threeMaxNumbers.length < 3) {
-			if (threeMaxNumbers.includes(item)) {
-				break
-			} else {
-				threeMaxNumbers.push(item)
-			}
-		}
-	}
-
-	console.log('maxTripletSum result: ', threeMaxNumbers)
-	console.log(
-		'maxTripletSum sum: ',
-		threeMaxNumbers.reduce((sum, item) => sum + item)
-	)
+	return { threeMaxNumbers, sumOfThreeMaxNumbers }
 }

@@ -1,29 +1,15 @@
-const outputNumbersArrayFromInterval = (start: number, end: number): number[] => {
-	const interval: number[] = []
-
-	for (let i = start; i <= end; i++) {
-		interval.push(i)
-	}
-
-	return interval
+const numbersFromOneToN = (n: number): number[] => {
+	return Array.from({ length: n }, (_, i) => i + 1)
 }
 
-const arrayToString = (array: number[]): string => {
-	return array.join('')
-}
-
-export const pattern = (amount: number): void => {
-	const interval: number[] = outputNumbersArrayFromInterval(1, amount)
+export const pattern = (amount: number): string[] => {
+	const sequense: string = numbersFromOneToN(amount).join('')
 
 	const patterns: string[] = []
 
-	let i = 0
-
-	while (i < interval.length) {
-		patterns.push(arrayToString(interval))
-		interval.push(interval.shift())
-		i++
+	for (let i = 0; i < amount; i++) {
+		patterns.push(sequense.slice(i, amount) + sequense.slice(0, i))
 	}
 
-	console.log('pattern result: ', patterns)
+	return patterns
 }
