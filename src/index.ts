@@ -71,37 +71,36 @@ console.log('function add(1+3) result: ', addOne(3))
 const addThree = add(3)
 console.log('function add(3+3) result: ', addThree(3))
 
-console.log('multiplyAll result: ', multiplyAll([1, 2, 3])(2))
+console.log('multiplyAll() result: ', multiplyAll([1, 2, 3])(2))
 
-console.log('uniqueSum', uniqueSum([-1, -1, 5, 2, -7]))
+console.log('uniqueSum() result: ', uniqueSum([-1, -1, 5, 2, -7]))
 
 console.log(
-	'reduce result: ',
+	'reduce() result: ',
 	reduce([1, 2, 3, 4], (acc: number, value: number) => (acc *= value), 1)
 )
 
-const f = (x: unknown) => {
+const f = (x: unknown): unknown => {
 	console.log(`f returned ${x}`)
 	return x
 }
-const g = (x: unknown) => {
+const g = (x: unknown): unknown => {
 	console.log(`g returned ${x}`)
 	return x
 }
-const h = (x: unknown) => {
+const h = (x: unknown): unknown => {
 	console.log(`h returned ${x}`)
 	return x
 }
-
-console.log('compose result: ')
+console.log('compose() result: ')
 const composeFunction = compose(f, g, h)
 composeFunction(1)
+
+console.log('\n//////////Higher-order-functions//////////\n')
 
 const fn = (a: number, b: number) => {
 	console.log('array a+b', a + b)
 }
-
-console.log('\n//////////Higher-order-functions//////////\n')
 
 spread(fn, [1, 2])
 

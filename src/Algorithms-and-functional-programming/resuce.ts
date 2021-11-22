@@ -1,4 +1,8 @@
-export const reduce = (arr: unknown[], callback: any, initialValue: unknown = undefined) => {
+export const reduce = (
+	arr: unknown[],
+	callback: any,
+	initialValue: unknown = undefined
+): unknown => {
 	if (!initialValue) {
 		initialValue = arr[0]
 		arr.shift()

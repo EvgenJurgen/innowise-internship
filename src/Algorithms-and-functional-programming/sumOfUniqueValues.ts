@@ -1,21 +1,13 @@
-export const uniqueSum = (array: number[]) => {
+const onlyUnique = (value: number, index: number, array: number[]): boolean => {
+	return array.indexOf(value) === index
+}
+
+export const uniqueSum = (array: number[]): number => {
 	if (array.length === 0) {
 		return 0
 	}
 
-	const sortedArray = array.sort((a, b) => a - b)
-
-	let last = sortedArray[0]
-	let sum = sortedArray[0]
-
-	for (let i = 0; i < sortedArray.length; i++) {
-		if (last === sortedArray[i]) {
-			continue
-		} else {
-			sum += sortedArray[i]
-			last = sortedArray[i]
-		}
-	}
-
-	return sum
+	return array
+		.filter((value, index, array) => onlyUnique(value, index, array))
+		.reduce((sum, item) => sum + item)
 }
