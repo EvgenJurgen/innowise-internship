@@ -37,8 +37,7 @@ const testArrayTask1: number[][] = [
 console.log('sumAverage() result: ', sumAverage(testArrayTask1));
 
 const testArrayTask2: number[] = [1, 2, 3, 5, 1, 9, 6, 9];
-const { threeMaxNumbers, sumOfThreeMaxNumbers } = maxTripletSum(testArrayTask2);
-console.log('threeMaxNumbers of maxTripletSum(): ', threeMaxNumbers);
+const sumOfThreeMaxNumbers = maxTripletSum(testArrayTask2);
 console.log('sumOfThreeMaxNumbers of maxTripletSum(): ', sumOfThreeMaxNumbers);
 
 const testArrayTask3: number[] = [3, 30, 34, 5, 9];
