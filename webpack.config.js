@@ -11,6 +11,9 @@ module.exports = {
 			},
 		],
 	},
+	devServer:{
+		static:'./dist',
+	},
 	resolve: {
 		extensions: ['.ts', '.js'],
 	},

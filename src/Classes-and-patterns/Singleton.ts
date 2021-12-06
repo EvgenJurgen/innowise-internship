@@ -3,7 +3,7 @@ export class Singleton {
 	name: string
 
 	constructor() {
-		if (typeof Singleton.instance === 'object') {
+		if (Singleton.instance) {
 			return Singleton.instance
 		} else {
 			this.name = 'Singleton'

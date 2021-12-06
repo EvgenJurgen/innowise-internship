@@ -1,3 +1,9 @@
 export const arithmeticSequenceSum = (a: number, r: number, n: number): number => {
-	return ((2 * a + r * (n - 1)) / 2) * n
-}
+	let sum = 0;
+
+	for (let i = 0; i < n; i++) {
+		sum += a + r * i;
+	}
+
+	return sum;
+};

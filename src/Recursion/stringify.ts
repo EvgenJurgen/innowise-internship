@@ -1,3 +1,3 @@
 export const stringify = function recusion(list: any): string {
-	return list.next === null ? `${list.data} -> null` : `${list.data} -> ${recusion(list.next)}`
-}
+	return list === null ? `${list}` : `${list.data} -> ${recusion(list.next)}`;
+};

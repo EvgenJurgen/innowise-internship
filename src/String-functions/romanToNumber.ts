@@ -1,47 +1,34 @@
-const numbers = (romanNumber: string): number => {
-	switch (romanNumber) {
-		case 'I':
-			return 1
-		case 'V':
-			return 5
-		case 'X':
-			return 10
-		case 'L':
-			return 50
-		case 'C':
-			return 100
-		case 'D':
-			return 500
-		case 'M':
-			return 1000
-		default:
-			return NaN
-	}
+interface MyObject {
+	[key: string]: number;
 }
 
 export const romanToNumber = (number: string): number => {
 	try {
-		number = number
-			.replace('IV', 'IIII')
-			.replace('IX', 'VIIII')
-			.replace('XL', 'XXXX')
-			.replace('XC', 'LXXXX')
-			.replace('CD', 'CCCC')
-			.replace('CM', 'DCCCC')
+		const numbers: MyObject = {
+			I: 1,
+			V: 5,
+			X: 10,
+			L: 50,
+			C: 100,
+			D: 500,
+			M: 1000,
+		};
 
-		let result = 0
+		const decimal: number = number.split('').reduce((decimal, item, index, array) => {
+			if (numbers[item] < numbers[array[index + 1]]) {
+				return decimal - numbers[item];
+			} else {
+				return decimal + numbers[item];
+			}
+		}, 0);
 
-		for (const item of number) {
-			result += numbers(item)
+		if (isNaN(decimal)) {
+			throw new Error('Error in the romanToNumber function');
 		}
 
-		if (isNaN(result)) {
-			throw Error('Error in romanToNumber function')
-		}
-
-		return result
+		return decimal;
 	} catch (e) {
-		console.log(e)
-		return NaN
+		console.log(e);
+		return NaN;
 	}
-}
+};

@@ -1,15 +1,12 @@
-const numbersFromOneToN = (n: number): number[] => {
-	return Array.from({ length: n }, (_, i) => i + 1)
-}
+const stringNumbersFromOneToN = (n: number): string[] => {
+	return Array.from({ length: n }, (_, i) => `${i + 1}`);
+};
 
 export const pattern = (amount: number): string[] => {
-	const sequense: string = numbersFromOneToN(amount).join('')
+	const arrayStringNumbers: string[] = stringNumbersFromOneToN(amount);
 
-	const patterns: string[] = []
-
-	for (let i = 0; i < amount; i++) {
-		patterns.push(sequense.slice(i, amount) + sequense.slice(0, i))
-	}
-
-	return patterns
-}
+	return arrayStringNumbers.reduce((pattrens, _, index, array) => {
+		pattrens.push(array.slice(index, array.length).concat(array.slice(0, index)).join(''));
+		return pattrens;
+	}, []);
+};

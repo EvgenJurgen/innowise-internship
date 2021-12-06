@@ -10,12 +10,12 @@ describe('Algorithms And Functional Programming', () => {
 		expect(add(2)(3)).toBe(5);
 	});
 
-	// test('compose method', () => {
-	//     const f1 =(x:number)=>x+1;
-	//     const f2 =(x:number)=>x*5;
-	//     const composeFunction = compose(f1,f2)
-	// 	expect(composeFunction(5)).toBe(26);
-	// });
+	test('compose method', () => {
+		const f1 = (x: number) => x + 1;
+		const f2 = (x: number) => x * 5;
+		const composeFunction = compose(f1, f2);
+		expect(composeFunction(5)).toBe(26);
+	});
 
 	test('flattenAndSort method', () => {
 		expect(flattenAndSort([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]])).toEqual(

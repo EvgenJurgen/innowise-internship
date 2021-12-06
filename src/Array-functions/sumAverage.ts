@@ -1,11 +1,10 @@
 export const sumAverage = (array: number[][]): number => {
-	const arithmeticMeanArray: number[] = array.map(
-		(arr) => arr.reduce((sum, item) => sum + item) / arr.length
-	)
-
-	const sumArithmeticMeans: number = arithmeticMeanArray.reduce((sum, item) => sum + item)
-
-	const averagedSum: number = Math.floor(sumArithmeticMeans)
-
-	return averagedSum
-}
+	return Math.floor(
+		array.reduce(
+			(value: number, itemArray) =>
+				value +
+				itemArray.reduce((average: number, item: number) => average + item / itemArray.length, 0),
+			0
+		)
+	);
+};
